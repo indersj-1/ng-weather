@@ -18,7 +18,7 @@ export class WeatherReportComponent implements OnInit {
   }
 
   getLocation(place: string) {
-      this.weatherReport = [];
+    this.weatherReport = [];
     if (place) {
       this.erroMessage = "";
       this.loading = true;
