@@ -8,7 +8,6 @@ import { DateFormate } from '../date-formate'
   styleUrls: ['./weather-report.component.css']
 })
 export class WeatherReportComponent implements OnInit {
-
   weatherReport = [];
   erroMessage: string;
   country = {};
@@ -19,6 +18,7 @@ export class WeatherReportComponent implements OnInit {
   }
 
   getLocation(place: string) {
+      this.weatherReport = [];
     if (place) {
       this.erroMessage = "";
       this.loading = true;
