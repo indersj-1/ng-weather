@@ -17,6 +17,7 @@ export class WeatherReportComponent implements OnInit {
   ngOnInit() {
   }
 
+
   getLocation(place: string) {
     this.weatherReport = [];
     if (place) {
