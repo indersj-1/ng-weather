@@ -1,0 +1,28 @@
+<app-location (setLocation)="getLocation($event)"></app-location>
+
+<p class="lead" *ngIf="loading">Loading...</p>
+<div class="alert alert-danger" *ngIf="erroMessage">
+  <strong>Weather Report !</strong> {{erroMessage.message}}
+</div>
+<div *ngIf="weatherReport.length">
+  <div class="alert alert-warning">
+    <strong>Weather Report!</strong> <b><a> {{country.name}},  {{country.country}}</a></b> <img alt="flag" src="http://openweathermap.org/images/flags/{{ country.country | lowercase }}.png">
+  </div>
+  <hr>
+
+  <table class="table table-striped">
+    <tbody>
+      <tr *ngFor="let weather of weatherReport">
+        <td>
+          {{ weather.dt | dateFormate }}
+          <img src="//openweathermap.org/img/w/{{weather.weather[0].icon}}.png" alt="forecast">
+        </td>
+        <td class="desc">
+          <p style="margin-bottom: 0;"><span class="label label-warning">{{weather.temp.day}}°C</span> &nbsp;&nbsp;<span class="label label-default">{{weather.temp.night}}°C</span> {{weather.weather[0].description}} </p>
+          {{weather.speed}} m/s &nbsp;
+          <br> clouds:{{weather.clouds}}, &nbsp;&nbsp; {{weather.pressure}} hpa
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
