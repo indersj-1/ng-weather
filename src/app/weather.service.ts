@@ -9,7 +9,7 @@ import 'rxjs/add/observable/throw';
 @Injectable()
 export class WeatherService {
   apiKey: string = 'fc0c4e1ec49d0c022df6519574a1a2ca';
-  url = 'http://api.openweathermap.org/data/2.5/forecast/daily?q=';
+  url = 'https://api.openweathermap.org/data/2.5/forecast/daily?q=';
   constructor(public http: Http) {
 
   }
