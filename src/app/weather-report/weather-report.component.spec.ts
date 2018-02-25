@@ -9,7 +9,6 @@ describe('WeatherReportComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ WeatherReportComponent ],
-      providers:[MapsAPILoader]
     })
     .compileComponents();
   }));
