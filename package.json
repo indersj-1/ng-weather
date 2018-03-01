@@ -1,6 +1,7 @@
 {
   "name": "ng-weather",
   "version": "0.0.0",
+  "description": "a single HTML page displaying the 5 day weather forecast for a location of your choice",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
