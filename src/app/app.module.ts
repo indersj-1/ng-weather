@@ -3,7 +3,7 @@ import { NgModule,CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 import { AgmCoreModule } from '@agm/core';
 import { HttpModule } from '@angular/http';
 import { WeatherService } from './weather.service';
-import { DateFormate } from './date-formate';
+import { DateFormate } from './date-formate.Pipe';
 import { AppComponent } from './app.component';
 import { LocationComponent } from './location/location.component';
 import { WeatherReportComponent } from './weather-report/weather-report.component';

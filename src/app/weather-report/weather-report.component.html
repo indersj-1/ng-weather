@@ -6,7 +6,7 @@
 </div>
 <div *ngIf="weatherReport.length">
   <div class="alert alert-warning">
-    <strong>Weather Report!</strong> <b><a> {{country.name}},  {{country.country}}</a></b> <img alt="flag" src="http://openweathermap.org/images/flags/{{ country.country | lowercase }}.png">
+    <strong>Weather Report!</strong> <b><a id="countryDetails"> {{country.name}},  {{country.country}}</a></b> <img alt="flag" src="http://openweathermap.org/images/flags/{{ country.country | lowercase }}.png">
   </div>
   <hr>
 

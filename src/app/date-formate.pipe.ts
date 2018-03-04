@@ -1,8 +1,8 @@
-import { Pipe } from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({
   name: "dateFormate"
 })
-export class DateFormate {
+export class DateFormate implements PipeTransform {
   transform(value: number) {
     let dateString;
     if (value) {

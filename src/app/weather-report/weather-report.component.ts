@@ -1,6 +1,6 @@
 import { Component, OnInit, Pipe } from '@angular/core';
 import { WeatherService } from '../weather.service';
-import { DateFormate } from '../date-formate'
+import { DateFormate } from '../date-formate.pipe'
 
 @Component({
   selector: 'app-weather-report',
@@ -17,7 +17,6 @@ export class WeatherReportComponent implements OnInit {
   ngOnInit() {
   }
 
-
   getLocation(place: string) {
     this.weatherReport = [];
     if (place) {
@@ -25,13 +24,11 @@ export class WeatherReportComponent implements OnInit {
       this.loading = true;
       this.climate.getWeather(place).subscribe(
         responseSuccess => {
-          if (responseSuccess && responseSuccess.cod == 200) {
-            this.weatherReport = responseSuccess.list;
-            this.country = responseSuccess.city;
-            console.log(responseSuccess.list);
-            console.log(responseSuccess.city);
-            this.loading = false;
-          }
+          this.weatherReport = responseSuccess.list;
+          this.country = responseSuccess.city;
+          console.log(responseSuccess.list);
+          console.log(responseSuccess.city);
+          this.loading = false;
         }, ResponseError => {
           this.loading = false;
           this.erroMessage = ResponseError.json()
